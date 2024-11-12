@@ -40,9 +40,6 @@ export default function Hero() {
             setLoading(true); // Start loading
             const response = await fetch('http://localhost:5000/api/v1/auth/getMeNext', {
                 method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
                 credentials: 'include',  // Include cookies with request
             });
 
