@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
 import { CategoryProps } from "../../type";
-import Link from "next/link";
 import { getData } from "@/lib";
 import { config } from "@/config";
 import TextSplit2 from "../TextSplit2";

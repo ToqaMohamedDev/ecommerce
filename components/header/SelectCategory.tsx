@@ -3,6 +3,7 @@ import { config } from '@/config';
 import { getData } from '@/lib';
 import { CategoryProps } from '@/type';
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react'
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa'
@@ -46,7 +47,7 @@ export default function SelectCategory() {
                                     href={`/category/${item?._base}`}
                                     className="flex w-full items-center gap-2 rounded-lg py-2 px-3 data-[focus]:bg-white/20 tracking-wide"
                                 >
-                                    <img
+                                    <Image
                                         src={item?.image}
                                         alt="categoryImage"
                                         className="w-6 h-6 rounded-md"

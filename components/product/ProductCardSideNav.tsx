@@ -3,11 +3,10 @@ import { LuArrowLeftRight } from "react-icons/lu";
 import { ProductProps } from "../../type";
 // import { store } from "../lib/store";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 
 const ProductCardSideNav = ({ product }: { product?: ProductProps }) => {
   //const { addToFavorite, favoriteProduct } = store();
-  const [existingProduct, setExistingProduct] = useState<ProductProps | null>(
+  const [existingProduct] = useState<ProductProps | null>(
     null
   );
 

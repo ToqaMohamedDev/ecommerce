@@ -4,11 +4,10 @@ import { useInView } from "react-intersection-observer";
 
 interface TextSplitProps {
   name: string;
-  className?: string;
   classNameCharc?: string;
 }
 
-export default function TextSplit({ name, className, classNameCharc }: TextSplitProps) {
+export default function TextSplit({ name, classNameCharc }: TextSplitProps) {
   const ctrls = useAnimation();
   const { ref, inView } = useInView(
     {

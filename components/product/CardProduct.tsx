@@ -1,14 +1,12 @@
 import { ProductProps } from '@/type';
 import Image from 'next/image';
 import React from 'react'
-import ReactPaginate from "react-paginate";
-
 
 interface Props {
   item: ProductProps;
-  setSearchText?: any;
+
 }
-export default function CardProduct({ item, setSearchText }: Props) {
+export default function CardProduct({ item,  }: Props) {
   return (
     <div>
       <Image

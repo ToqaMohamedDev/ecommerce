@@ -1,18 +1,15 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import Autoplay from "embla-carousel-autoplay"
+//import Autoplay from "embla-carousel-autoplay"
 
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
+
 } from "@/components/ui/carousel"
-import Image from 'next/image'
 import { Button } from '../ui/button'
-import ViewModel from '../3dModel/ViewModel'
-import TextSplit from '../TextSplit'
+
 const databanner = [
     {
         image: '/banner/banner3.avif',

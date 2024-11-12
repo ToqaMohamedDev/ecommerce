@@ -46,7 +46,9 @@ export default function CarouselCat() {
               className='flex items-center justify-center'>
                 <CarouselContent>
                     {categories.map((items:CategoryProps)=>{
-                        return <CarouselItem className="basis-1/5 text-white flex items-center gap-2">
+                        return <CarouselItem 
+                        key={items._id}
+                        className="basis-1/5 text-white flex items-center gap-2">
                          <Image
                          src={items.image}
                          width={30}

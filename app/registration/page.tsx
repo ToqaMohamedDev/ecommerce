@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { MdPhotoLibrary } from 'react-icons/md';
@@ -141,7 +142,7 @@ export default function Registration() {
                     <div className="flex flex-col items-center text-center">
                       <div className="w-14 h-14 border border-gray-600 rounded-full p-1">
                         {avatar.url ? (
-                          <img src={avatar.url} alt="userImage" className="w-full h-full rounded-full object-cover" />
+                          <Image src={avatar.url} alt="userImage" className="w-full h-full rounded-full object-cover" />
                         ) : (
                           <MdPhotoLibrary className="mx-auto h-full w-full text-gray-500" />
                         )}

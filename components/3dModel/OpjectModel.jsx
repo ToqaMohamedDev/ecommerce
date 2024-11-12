@@ -4,15 +4,13 @@ import { useGLTF } from "@react-three/drei";
 import {useFrame, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Leva, useControls } from "leva";
-import { forwardRef, useRef,useEffect } from "react";
+import {  useControls } from "leva";
+import { useRef, } from "react";
 
 gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 export function OpjectModel(props) {
-  const group = useRef(null);
   const { nodes, materials } = useGLTF('/gaming_pc_with_curved_monitor.glb')
-
   const {camera,scene}= useThree();
   const tl=gsap.timeline();
   const {cameraPosition,scenePosition,sceneRotation} =useControls({

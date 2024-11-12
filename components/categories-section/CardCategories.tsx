@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import { CategoryProps } from '@/type'
 import Link from 'next/link'
 import React from 'react'
+import Image from "next/image";
 
 interface CardCategoriesProps {
     category: CategoryProps;
@@ -55,7 +56,7 @@ export default function CardCategories({ category}: CardCategoriesProps) {
            
             className="w-full h-auto relative group overflow-hidden"
         >
-            <img
+            <Image
                 src={category.image}
                 alt="categoryImage"
                 className="w-full h-auto rounded-md group-hover:scale-110 duration-300"

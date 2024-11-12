@@ -1,8 +1,8 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { Suspense, forwardRef } from "react";
-import { Center, Environment, Float, OrbitControls, View } from "@react-three/drei";
+import { Suspense, } from "react";
+import { Center, Environment, Float, OrbitControls, } from "@react-three/drei";
 import { OpjectModel } from './OpjectModel'
 
 export default function ViewModel() {

@@ -3,18 +3,16 @@ import { config } from '@/config';
 import { getData } from '@/lib';
 import React, { useEffect, useState } from 'react'
 import TextSplit2 from '../TextSplit2';
-import CardProduct from './CardProduct';
-import { ProductProps } from '@/type';
 import Pagination from './Pagination';
 
 export default function Prouduct() {
-    const [products, setProducts] = useState([]);
+  //  const [, setProducts] = useState([]);
     useEffect(() => {
       const fetchData = async () => {
         const endpoint = `${config?.baseUrl}/products`;
         try {
           const data = await getData(endpoint);
-          setProducts(data);
+      //    setProducts(data);
         } catch (error) {
           console.error("Error fetching data", error);
         }
