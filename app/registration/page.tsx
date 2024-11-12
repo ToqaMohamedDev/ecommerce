@@ -50,7 +50,7 @@ export default function Registration() {
 
     try {
         setLoading(true);
-        const response = await fetch('http://localhost:8000/api/v1/auth/signup', {
+        const response = await fetch('http://localhost:5000/api/v1/auth/signup', {
           method: 'POST',
           body: formData,
         });

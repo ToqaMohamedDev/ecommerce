@@ -38,7 +38,7 @@ export default function Hero() {
     const fetchUserData = async () => {
         try {
             setLoading(true); // Start loading
-            const response = await fetch('http://localhost:8000/api/v1/auth/getMeNext', {
+            const response = await fetch('http://localhost:5000/api/v1/auth/getMeNext', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
