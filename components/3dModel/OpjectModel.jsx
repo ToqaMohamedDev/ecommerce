@@ -5,7 +5,6 @@ import {useFrame, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {  useControls } from "leva";
-import { useRef, } from "react";
 
 gsap.registerPlugin(useGSAP,ScrollTrigger);
 

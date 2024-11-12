@@ -12,6 +12,6 @@ const Title = ({ text, className }: Props) => {
 export default Title;
 /*
 git add .
-git commit -m "first3"
+git commit -m "first4"
 git push -u origin main
 */

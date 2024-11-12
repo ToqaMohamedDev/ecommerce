@@ -1,24 +1,21 @@
-'use client'
-import { config } from '@/config';
-import { getData } from '@/lib';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import TextSplit2 from '../TextSplit2';
 import Pagination from './Pagination';
 
 export default function Prouduct() {
   //  const [, setProducts] = useState([]);
-    useEffect(() => {
-      const fetchData = async () => {
-        const endpoint = `${config?.baseUrl}/products`;
-        try {
-          const data = await getData(endpoint);
-      //    setProducts(data);
-        } catch (error) {
-          console.error("Error fetching data", error);
-        }
-      };
-      fetchData();
-    }, []);   
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //     const endpoint = `${config?.baseUrl}/products`;
+    //     try {
+    //       const data = await getData(endpoint);
+    //   //    setProducts(data);
+    //     } catch (error) {
+    //       console.error("Error fetching data", error);
+    //     }
+    //   };
+    //   fetchData();
+    // }, []);   
 return (
   <section className="container mx-auto px-3 sm:px-0">
     <div className="mb-10 mt-10">
