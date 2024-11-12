@@ -2,11 +2,6 @@
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
-interface LoginFormData {
-  email: string;
-  password: string;
-}
-
 export default function Login() {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
