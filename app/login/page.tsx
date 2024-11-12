@@ -1,26 +1,34 @@
 'use client'
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
+interface LoginFormData {
+  email: string;
+  password: string;
+}
 
 export default function Login() {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [errMsg, setErrMsg] = useState("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [errMsg, setErrMsg] = useState<string>("");
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       setLoading(true);
       const formData = new FormData(e.target as HTMLFormElement);
-      const { email, password }: any = Object.fromEntries(formData);
+      const formEntries = Object.fromEntries(formData) as unknown;
 
-      // تحقق من صحة البيانات (يمكنك استبدال هذه الجزئية بإرسال البيانات إلى الخادم)
+      // تحقق من أن الكائن يحتوي على الخصائص المطلوبة
+      const { email, password } = formEntries as { email: string; password: string };
+
+      // تحقق من صحة البيانات
       if (!email || !password) {
         setErrMsg("Both fields are required.");
         return;
       }
 
-      // إرسال البيانات إلى الخادم (على سبيل المثال: Firebase، Node.js API، إلخ)
+      // إرسال البيانات إلى الخادم
       const response = await fetch('http://localhost:8000/api/v1/auth/login', {
         method: 'POST',
         headers: {
@@ -34,10 +42,10 @@ export default function Login() {
       }
 
       // في حال نجاح التوثيق
-      router.push('/dashboard'); // مثال على التوجيه إلى صفحة أخرى بعد الدخول
-    } catch (error: any) {
+      router.push('/dashboard');
+    } catch (error) {
       console.error("Error", error);
-      setErrMsg(error.message || "An error occurred. Please try again.");
+      setErrMsg(error instanceof Error ? error.message : "An error occurred. Please try again.");
     } finally {
       setLoading(false);
     }

@@ -11,10 +11,7 @@ const Title = ({ text, className }: Props) => {
 
 export default Title;
 /*
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/ToqaMohamedDev/ecommerce.git
+git add .
+git commit -m "first"
 git push -u origin main
 */
