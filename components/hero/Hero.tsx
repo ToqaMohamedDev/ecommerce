@@ -51,6 +51,7 @@ export default function Hero() {
             }
 
             const data = await response.json();
+            console.log(data);
             setUser(data); // Set user data
         } catch (err: unknown) {
             if (err instanceof Error) {
