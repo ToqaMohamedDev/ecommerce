@@ -1,3 +1,4 @@
+'use client'
 import { ProductProps } from '@/type';
 import React, { useEffect, useState } from 'react';
 import CardProduct from './CardProduct';
