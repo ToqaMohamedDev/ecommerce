@@ -49,27 +49,24 @@ export default function Registration() {
     }
 
     try {
-      setLoading(true);
-      const response = await fetch('http://localhost:8000/api/v1/auth/signup', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        setErrMsg(errorData.message || 'Registration failed');
-      } else {
-        setErrMsg('');
-        
-        router.push('/');
+        setLoading(true);
+        const response = await fetch('http://localhost:8000/api/v1/auth/signup', {
+          method: 'POST',
+          body: formData,
+        });
+      
+        if (!response.ok) {
+          const errorData = await response.json();
+          setErrMsg(errorData.message || 'Registration failed');
+        } else {
+          setErrMsg('');
+          router.push('/');
+        }
+      } catch {
+        setErrMsg('An error occurred. Please try again.');
+      } finally {
+        setLoading(false);
       }
-    } catch (error) {
-      setErrMsg('An error occurred. Please try again.');
-    } finally {
-       
-      setLoading(false);
-  
-    }
   };
 
   return (
