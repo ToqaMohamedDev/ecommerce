@@ -1,28 +1,14 @@
 'use client'
-import { config } from '@/config';
-import { getData } from '@/lib';
 import { CategoryProps } from '@/type';
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react'
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+
 import { FaChevronDown } from 'react-icons/fa'
+import useUserStore from '@/lib/counterStore'
 
 export default function SelectCategory() {
-    const [categories, setCategories] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const endpoint = `${config?.baseUrl}/categories`;
-            try {
-                const data = await getData(endpoint);
-                setCategories(data);
-            } catch (error) {
-                console.error("Error fetching data", error);
-            }
-        };
-        fetchData();
-    }, []);
+    const { categories,setUID } = useUserStore();
     return (
         <div className='xl:hidden'>
             <Menu>
@@ -44,10 +30,13 @@ export default function SelectCategory() {
                         {categories.map((item: CategoryProps) => (
                             <MenuItem key={item?._id}>
                                 <Link
-                                    href={`/category/${item?._base}`}
+                                    href={`/${decodeURIComponent(item.name)}`}
+                                    onClick={() => setUID(`${item._id}`)}
                                     className="flex w-full items-center gap-2 rounded-lg py-2 px-3 data-[focus]:bg-white/20 tracking-wide"
                                 >
                                     <Image
+                                        width={30}
+                                        height={30}
                                         src={item?.image}
                                         alt="categoryImage"
                                         className="w-6 h-6 rounded-md"

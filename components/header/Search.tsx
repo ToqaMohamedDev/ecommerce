@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { IoClose, IoSearch } from 'react-icons/io5';
-
+import useAppStore from '@/lib/counterStore'
 interface SearchProps{
     className:string,
     inputclassName:string,
@@ -9,19 +9,19 @@ interface SearchProps{
 }
 
 export default function Search({className,inputclassName,searchclassName}:SearchProps) {
-  const [text, setText] = useState('');
+   const {search,setSearech}=  useAppStore();
   return (
     <div className={className}>
     <input
-      onChange={(e) => setText(e.target.value)}
+      onChange={(e) => setSearech(e.target.value)}
       type="text"
       className={inputclassName}
       placeholder='البحث عن المنتج'
       name='asdas'
-      value={text}
+      value={search?.toString()}
     />
-    {text ? (<IoClose
-      onClick={() => setText('')}
+    {search ? (<IoClose
+      onClick={() => setSearech('')}
       className={searchclassName}
     />) : (<IoSearch
       className={searchclassName}

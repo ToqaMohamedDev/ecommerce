@@ -9,11 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@gsap/react": "^2.1.1",
     "@headlessui/react": "^2.2.0",
+    "@mui/material": "^6.1.7",
+    "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
+    "@radix-ui/react-checkbox": "^1.1.2",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
     "@radix-ui/react-menubar": "^1.1.2",
+    "@radix-ui/react-slider": "^1.2.1",
     "@radix-ui/react-slot": "^1.1.0",
     "@react-three/drei": "^9.115.0",
     "@react-three/fiber": "^8.17.10",
@@ -36,7 +42,8 @@
     "react-paginate": "^8.2.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.170.0"
+    "three": "^0.170.0",
+    "zustand": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

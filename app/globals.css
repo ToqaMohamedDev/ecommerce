@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  overscroll-behavior: none;
+}
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 @layer utilities {
@@ -20,7 +26,7 @@ body {
     --card-foreground: 240 19% 16%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
-    --primary: 8 99% 67%;
+    --primary: 243 57% 50%;
     --primary-foreground: 300 0% 100%;
     --secondary: 240 19% 16%;
     --secondary-foreground: 300 0% 100%;
@@ -44,7 +50,7 @@ body {
     --card-foreground: 300 0% 100%;
     --popover: 20 14.3% 4.1%;
     --popover-foreground: 60 9.1% 97.8%;
-    --primary: 8 99% 67%;
+    --primary: 243 57% 50%;
     --primary-foreground: 300 0% 100%;
     --secondary: 240 19% 16%;
     --secondary-foreground: 300 0% 100%;
@@ -70,3 +76,36 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3; 
+  border-top: 8px solid #3498db; 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+

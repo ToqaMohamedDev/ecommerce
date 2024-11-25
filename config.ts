@@ -11,7 +11,7 @@ const checkConfig = (server: string): Config | {} => {
       break;
     case "local":
       config = {
-        baseUrl: "http://localhost:8000",
+        baseUrl: "http://localhost:5000/api/v1",
       };
       break;
     default:

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import useUserStore from '@/lib/counterStore' // استيراد store
 
 const dataNav=[
    
@@ -20,9 +21,15 @@ const dataNav=[
 ]
 export default function NavBar() {
     const path=usePathname(); 
+    const { user, loading } = useUserStore(); 
 
   return (
-    <nav className= {`hidden xl:flex gap-x-4 items-center`}>{
+   <>
+    {user?(<div  className='flex gap-x-4 items-center justify-end'>
+      <div className=''>
+      {`${user.firstname}  ${user.lastname} مرحبا `}
+    </div>
+    </div>):( <nav className= {`hidden xl:flex gap-x-4 items-center`}>{
         dataNav.map((link,index)=>{
             return <Link 
             href={link.link} 
@@ -37,6 +44,7 @@ export default function NavBar() {
             {link.name}
             </Link>
         })
-    }</nav>
+    }</nav>)}
+   </>
   )
 }

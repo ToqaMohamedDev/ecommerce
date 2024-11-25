@@ -1,4 +1,5 @@
 'use client';
+import Scrollable from '@/components/Scrollable';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -72,6 +73,7 @@ export default function Registration() {
 
   return (
     <section className="container mx-auto py-10">
+        <Scrollable enableScroll/>
       <div className="bg-secondary rounded-lg">
         <form onSubmit={handleRegistration} 
         className="max-w-4xl mx-auto pt-10 px-10 lg:px-0 text-white">
@@ -93,6 +95,7 @@ export default function Registration() {
                 className="block w-full rounded-md bg-white/5 py-1.5 px-4 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-skyText sm:text-sm mt-2"
               />
             </div>
+            
             <div className="sm:col-span-3">
               <label htmlFor="lastName" className="block text-sm font-medium text-gray-400">
                 Last name
@@ -140,7 +143,12 @@ export default function Registration() {
                     <div className="flex flex-col items-center text-center">
                       <div className="w-14 h-14 border border-gray-600 rounded-full p-1">
                         {avatar.url ? (
-                          <Image src={avatar.url} alt="userImage" className="w-full h-full rounded-full object-cover" />
+                          <Image src={avatar.url}
+                           alt="userImage" 
+                           width={66}
+                           height={66} 
+                           className="rounded-full object-cover"
+                           />
                         ) : (
                           <MdPhotoLibrary className="mx-auto h-full w-full text-gray-500" />
                         )}
@@ -164,6 +172,10 @@ export default function Registration() {
               </div>
             </div>
           </div>
+          
+
+
+
           {errMsg && <p className="bg-white/90 text-red-600 text-center py-1 rounded-md font-semibold">{errMsg}</p>}
           <button
             disabled={loading}

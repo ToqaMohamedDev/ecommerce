@@ -38,7 +38,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header/>
-          {children}
+          <main className="flex-grow min-h-[100vh]">
+            {children}
+          </main>
+     
           <Footer/>
         </ThemeProvider>
       </body>

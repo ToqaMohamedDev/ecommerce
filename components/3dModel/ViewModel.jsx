@@ -22,7 +22,7 @@ export default function ViewModel() {
             <OpjectModel />
           </Float>
           <OrbitControls  
-    //      enableZoom={false}
+       enableZoom={false}
           />
           <Environment files="/hdr/field.hdr" intensity={2} />
         </Center>

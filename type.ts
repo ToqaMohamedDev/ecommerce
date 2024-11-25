@@ -9,32 +9,52 @@ export interface HighlightsType {
 }
 
 export interface CategoryProps {
-  _id: number;
+  _id: string;
   image: string;
   name: string;
-  _base: string;
-  description: string;
+  slug: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ApiResponse {
+  results: number;
+  paginationResult: {
+    currentPage: number;
+    limit: number;
+    numberOfPages: number;
+  };
+  data: CategoryProps[];
 }
 
 export interface ProductProps {
-  _id: number;
-  _base: string;
-  reviews: number;
-  rating: number;
-  quantity: number;
-  overView: string;
-  name: string;
-  isStock: boolean;
-  isNew: boolean;
-  images: [string];
-  discountedPrice: number;
-  regularPrice: number;
+  _id: string;
+  title: string;
+  slug: string;
   description: string;
-  colors: [string];
-  category: string;
-  brand: string;
+  quantity: number;
+  sold: number;
+  price: number;
+  colors: string[];
+  imageCover: string;
+  images: string[];
+  category: {
+    name: string;
+  };
+  subcategories: string[];
+  ratingsQuantity: number;
+  createdAt: string;
+  updatedAt: string;
 }
-
+export interface ApiResponseProduct {
+  results: number;
+  paginationResult: {
+    currentPage: number;
+    limit: number;
+    numberOfPages: number;
+  };
+  data: ProductProps[];
+}
 export interface BlogProps {
   _id: number;
   image: string;

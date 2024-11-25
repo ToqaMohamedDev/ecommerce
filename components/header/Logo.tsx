@@ -6,9 +6,9 @@ export default function Logo() {
     <a href="/">
     <Image
       src='/logo.png'
-      className='text-white bg-white p-1 rounded-lg'
-      width={150}
-      height={150}
+      className='text-white  p-1 rounded-lg'
+      width={60}
+      height={50}
       alt='Logo'
     />
   </a>
