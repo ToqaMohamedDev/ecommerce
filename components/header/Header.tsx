@@ -12,7 +12,7 @@ import CarouselCat from './CarouselCat'
 import SearchBanner from './SearchBanner'
 
 export default function Header() {
-  const { fetchUserData, fetchCategories ,search } = useUserStore(); // جلب البيانات من store
+  const { fetchUserData, fetchCategories} = useUserStore(); // جلب البيانات من store
   
   useEffect(() => {
       fetchUserData(); // استدعاء الدالة لجلب بيانات المستخدم عند تحميل المكون

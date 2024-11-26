@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/accordion"
 import { Checkbox } from "@/components/ui/checkbox"
 import Slider from "@mui/material/Slider";
-import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 
 const brands = [
@@ -113,8 +112,10 @@ export default function Filter() {
             <AccordionItem value="item-3">
                 <AccordionTrigger className='font-bold text-md'>Brand</AccordionTrigger>
                 <AccordionContent>
-                    {brands.map((item) => {
-                        return <div className='text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 pb-1 cursor-pointer'>
+                    {brands.map((item,index) => {
+                        return <div 
+                        key={index}
+                        className='text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 pb-1 cursor-pointer'>
                             {item}
                         </div>
                     })}

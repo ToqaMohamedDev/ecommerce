@@ -37,7 +37,7 @@ export default function SearchBanner() {
   }, [search]);
 
   return (
-    <>
+    <div>
       {search && (
         <div className="absolute bg-background top-[100%] max-h-[500px] w-full py-5  z-50 overflow-y-scroll  shadow-sm shadow-primary scrollbar-hide">
           {isLoading ? (
@@ -58,21 +58,21 @@ export default function SearchBanner() {
             <div className="py-10  w-full flex items-center justify-center">
               <p className="text-xl font-normal">
                 {/^[a-zA-Z]+$/.test(search) ? (
-                  <>
+                  <div>
                     Product "<span className="underline underline-offset-2 decoration-[1px] text-red-500 font-semibold">{search}</span>" not found. Search for your product.
-                  </>
+                  </div>
                 ) : (
-                  <>
+                  <div>
                     غير موجود{' '}
                     <span className="underline underline-offset-2 decoration-[1px] text-red-500 font-semibold">{search}</span>
                     {' '}ابحث عن منتجك
-                  </>
+                  </div>
                 )}
               </p>
             </div>
           )}
         </div>
       )}
-    </>
+    </div>
   );
 }

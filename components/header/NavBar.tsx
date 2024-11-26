@@ -21,7 +21,7 @@ const dataNav=[
 ]
 export default function NavBar() {
     const path=usePathname(); 
-    const { user, loading } = useUserStore(); 
+    const { user } = useUserStore(); 
 
   return (
    <>

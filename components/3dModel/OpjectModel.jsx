@@ -1,10 +1,10 @@
 "use client";
 import { useGSAP } from "@gsap/react";
 import { useGLTF } from "@react-three/drei";
-import {useFrame, useThree } from "@react-three/fiber";
+import { useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {  useControls } from "leva";
+//import {  useControls } from "leva";
 
 gsap.registerPlugin(useGSAP,ScrollTrigger);
 

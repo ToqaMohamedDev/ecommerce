@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import { IoClose, IoSearch } from 'react-icons/io5';
 import useAppStore from '@/lib/counterStore'
 interface SearchProps{

@@ -7,13 +7,13 @@ import Prouduct from "@/components/product/Prouduct";
 
 export default async function Home() {
   return (
-    <>
+    <div>
     <PreLoader/>
     <div className="prescroll">
      <Hero/>
      <Categories/>
      <Prouduct/>
     </div>
-    </>
+    </div>
   );
 }

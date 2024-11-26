@@ -1,6 +1,6 @@
 
 'use client';
-import { CategoryProps, ApiResponse } from "@/type"; 
+import { CategoryProps } from "@/type"; 
 import TextSplit2 from "../TextSplit2";
 import CardCategories from "./CardCategories";
 import useUserStore from '@/lib/counterStore' 

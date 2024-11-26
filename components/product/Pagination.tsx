@@ -60,7 +60,7 @@ export default function Pagination() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <>
+        <div>
           <Items currentItems={products} />
           <ReactPaginate
             nextLabel="Next"
@@ -77,7 +77,7 @@ export default function Pagination() {
             nextClassName="bg-black h-9 px-2 flex items-center rounded-lg text-white hover:bg-primary" 
             previousClassName="bg-black h-9 px-2 flex items-center rounded-lg text-white hover:bg-primary"
           />
-        </>
+        </div>
       )}
     </div>
   );
