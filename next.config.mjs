@@ -4,7 +4,7 @@ const nextConfig = {
       ignoreDuringBuilds: true,
       },
     images: {
-        domains: ['localhost'],
+        domains: ['serverecomerce.vercel.app'],
       },
 };
 
